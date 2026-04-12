@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: #eef0f7;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #1a1a1a;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ── CARD ── */
+.card {
+  background: #fff;
+  width: 100%;
+  max-width: 460px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e2e4ed;
+  border-left: 4px solid #4f46e5;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.07);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(79, 70, 229, 0.11);
+}
+
+/* ── HEADER ── */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.card-header h2 {
+  font-size: 16.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111;
+}
+
+.completed .card-header h2 {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.actions button {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+[data-testid="test-todo-edit-button"] {
+  background: #f5f5ff;
+  border: 1px solid #c7d2fe;
+  color: #4f46e5;
+}
+
+[data-testid="test-todo-edit-button"]:hover {
+  background: #ede9fe;
+}
+
+[data-testid="test-todo-delete-button"] {
+  background: #fff5f5;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+}
+
+[data-testid="test-todo-delete-button"]:hover {
+  background: #fee2e2;
+}
+
+/* ── DESCRIPTION ── */
+p[data-testid="test-todo-description"] {
+  font-size: 13.5px;
+  color: #57606a;
+  line-height: 1.6;
+}
+
+.completed p[data-testid="test-todo-description"] {
+  color: #bbb;
+}
+
+/* ── META ── */
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.badge {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.high {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+.medium {
+  background: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #fdba74;
+}
+.low {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #86efac;
+}
+
+#status {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: #f1f3f5;
+  color: #555;
+  border: 1px solid #e0e0e0;
+}
+
+.completed #status {
+  background: #f0fdf4;
+  color: #16a34a;
+  border-color: #86efac;
+}
+
+/* ── TIME ROW ── */
+.time-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  color: #888;
+}
+
+#time-remaining {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+#time-remaining.overdue {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+#time-remaining.soon {
+  background: #fffbeb;
+  color: #d97706;
+  border-color: #fde68a;
+}
+
+/* ── TAGS ── */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tags span {
+  font-size: 11.5px;
+  color: #4f46e5;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.tags span::before {
+  content: "# ";
+  opacity: 0.45;
+}
+
+/* ── FOOTER ── */
+.footer {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 14px;
+}
+
+label {
+  font-size: 13.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #444;
+  width: fit-content;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #4f46e5;
+}
+
+/* ── FOCUS ── */
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  .card {
+    padding: 18px;
+  }
+  .card-header {
+    flex-direction: column;
+  }
+  .actions {
+    align-self: flex-end;
+  }
+}
