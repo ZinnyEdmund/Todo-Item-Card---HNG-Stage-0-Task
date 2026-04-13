@@ -3,6 +3,10 @@ const timeEl = document.getElementById("time-remaining");
 const checkbox = document.getElementById("checkbox");
 const status = document.getElementById("status");
 const card = document.querySelector('[data-testid="test-todo-card"]');
+const editButton = document.querySelector('[data-testid="test-todo-edit-button"]');
+const deleteButton = document.querySelector(
+  '[data-testid="test-todo-delete-button"]'
+);
 
 function updateTime() {
   const diff = dueDate - new Date();
@@ -45,10 +49,10 @@ checkbox.addEventListener("change", () => {
   status.textContent = done ? "Done" : "Pending";
 });
 
-document
-  .querySelector('[data-testid="test-todo-edit-button"]')
-  .addEventListener("click", () => console.log("edit clicked"));
+editButton.addEventListener("click", () => {
+  console.log("edit clicked");
+});
 
-document
-  .querySelector('[data-testid="test-todo-delete-button"]')
-  .addEventListener("click", () => alert("Delete clicked"));
+deleteButton.addEventListener("click", () => {
+  console.log("delete clicked");
+});
