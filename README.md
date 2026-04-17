@@ -27,20 +27,12 @@
 - No form validation beyond empty title
 - Favicon missing (404 in logs)
 
-## Accessibility Notes
-
-``` ARIA: aria-expanded/aria-controls (toggle), aria-live="polite" (time/status) Labels: All form fields w/ for="" matching ids Focus: Edit trap + return-to-Edit btn + tab order States: Visual + color + screenreader announcements Keyboard: Full tab flow preserved Screenreader: Status/time live updates announced
-WCAG AA compliant
-```
 
 ## Live Demo
 
 - **Local**: http://localhost:3001
 - **Test**: All interactions work, responsive 320px+
 
-## Test Coverage
 
-``` All Stage 0 testids preserved All new Stage 1a testids functional Edit flow explicit button control Status/priority/time/overdue logic Mobile/keyboard/a11y complete
-```
+**Thank You** 
 
-<!-- **Production-ready for submission!**  -->
